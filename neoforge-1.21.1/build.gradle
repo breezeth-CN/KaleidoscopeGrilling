@@ -109,6 +109,7 @@ dependencies {
         runtimeOnly flywheel
         runtimeOnly registrate
     }
+    compileOnly "maven.modrinth:kaleidoscope-twilight:Wd1H1J1p"
 }
 
 java { toolchain.languageVersion = JavaLanguageVersion.of(21) }
