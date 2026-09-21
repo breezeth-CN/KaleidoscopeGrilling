@@ -15,6 +15,8 @@ public final class GrillingMixinPlugin implements IMixinConfigPlugin {
   private static final boolean ORDER_TO_COOK_AVAILABLE =
       classExists("cn.breezeth.ordertocook.screen.RefrigeratorScreenHandler");
   private static final boolean PUNCHY_AVAILABLE = classExists("punchy.config.PunchyConfig");
+  private static final boolean KALEIDOSCOPE_TWILIGHT_AVAILABLE =
+          classExists("com.bmt.kaleidoscope_twilight.common.client.render.FieryPotBlockEntityRender");
 
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
@@ -35,6 +37,7 @@ public final class GrillingMixinPlugin implements IMixinConfigPlugin {
     if (mixinClassName.endsWith("RefrigeratorScreenHandlerSkewerSortMixin")
         || mixinClassName.endsWith("RefrigeratorScreenSkewerSortMixin")) return ORDER_TO_COOK_AVAILABLE;
     if (mixinClassName.endsWith("PunchySkewerEatingCompatMixin")) return PUNCHY_AVAILABLE;
+    if (mixinClassName.endsWith("FieryPotBlockEntityRenderMixin")) return KALEIDOSCOPE_TWILIGHT_AVAILABLE;
     return true;
   }
 
